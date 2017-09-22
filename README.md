@@ -54,7 +54,7 @@ do
 done
 ```
 
-10. Add code to create QC reports for each of the runs using the `FastQC` program.
+10. Add code to create QC reports for each of the runs using the `FastQC` program. To view these reports, you'll need to connect to the server using the SFTP protocol and the program 'Cyberduck' to transfer the files to your laptop. You need to use the same username, password, and port as you used to connect via SSH. Once they are transferred, you can open the `.html` files in your web browser to view them.
 
 ```
 fastqc data/raw_data/*.fastq --outdir=output/fastqc
