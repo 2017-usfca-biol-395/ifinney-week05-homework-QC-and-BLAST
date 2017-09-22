@@ -87,12 +87,6 @@ bioawk -c fastx '{print ">"$name"\n"$seq}' data/trimmed/filename.trim.fastq
 # This cuts down on the number of uncultured or environmental matches
 # -query is the fasta file of sequences we want to search for matches to
 
-# NOTE: the 2017-09-21_GenBank_Environmental_Uncultured_to_Exclude.txt
-# file is not yet in the folder. It will be added some time on Friday. If
-# you want to get started working, you can take that parameter out until
-# the file is there. What it does is cut down the number of your BLAST
-# matches that are to unccultured or environmental sequences.
-
 blastn -db /blast-db/nt -num_threads 2 -outfmt '10 sscinames std' -out blast_results.csv -max_target_seqs 1 -negative_gilist /blast-db/2017-09-21_GenBank_Environmental_Uncultured_to_Exclude.txt -query query_seqs.fasta
 ```
 
