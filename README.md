@@ -38,10 +38,10 @@ git config --global user.email "yourgithubaccount@email.com"
 5. Clone your fork of the assignment repository down to the server.
 6. Go into the assignment directory from the command line.
 7. Make `data/raw_data` and `output/fastqc` directories using `mkdir -p data/raw_data output/fastqc`.
-8. Create a new script file to run the pipeline. After your top level comments, you **MUST** include the following line or else the programs may not work. This line checks to see if there is a value for the variable BLASTDB, and if there is not, then it sets the appropriate variables.
+8. Create a new script file to run the pipeline. After your top level comments, you **MUST** include the following line or else the programs may not work. This line checks to see if there is a value for the variable BLASTDB, and if there is not, then it sets the appropriate variables. You also can run this directly on the command line, but make sure to also add it to your script.
 
 ```
-if [ -z ${BLASTDB} ]; then source /home/.bashrc; fi
+if [ -z ${BLASTDB} ]; then source /home/.bashrc; export PATH; export BLASTDB; fi
 ```
 
 9. Add code to download the list of files in the run table to the raw data directory.
