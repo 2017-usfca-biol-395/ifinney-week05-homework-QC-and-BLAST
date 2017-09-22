@@ -60,7 +60,7 @@ done
 fastqc data/raw_data/*.fastq --outdir=output/fastqc
 ```
 
-11. Add code to trim the sequences based on their quality scores. This set of parameters trims leading or trailing Ns, discards any sequences below a length of 150 base pairs, and uses a sliding window average method to cut off reads when the base score drops below 25. You will need to adjust the following command to do the trimming in a for loop.
+11. Add code to trim the sequences based on their quality scores. This set of parameters trims leading or trailing Ns, discards any sequences below a length of 150 base pairs, and uses a sliding window average method to cut off reads when the base score drops below 25. You will need to adjust the following command to do the trimming in a for loop. Don't forget to make the output directory before running this.
 
 ```
 # Info on the Trimmomatic tool available here: http://www.usadellab.org/cms/index.php?page=trimmomatic
@@ -87,7 +87,13 @@ bioawk -c fastx '{print ">"$name"\n"$seq}' data/trimmed/filename.trim.fastq
 # This cuts down on the number of uncultured or environmental matches
 # -query is the fasta file of sequences we want to search for matches to
 
-blastn -db nt -num_threads 2 -outfmt '10 sscinames std' -out blast_results.csv -max_target_seqs 1 -negative_gilist /blast-db/2017-09-21_GenBank_Environmental_Uncultured_to_Exclude.txt -query query_seqs.fasta
+# NOTE: the 2017-09-21_GenBank_Environmental_Uncultured_to_Exclude.txt
+# file is not yet in the folder. It will be added some time on Friday. If
+# you want to get started working, you can take that parameter out until
+# the file is there. What it does is cut down the number of your BLAST
+# matches that are to unccultured or environmental sequences.
+
+blastn -db /blast-db/nt -num_threads 2 -outfmt '10 sscinames std' -out blast_results.csv -max_target_seqs 1 -negative_gilist /blast-db/2017-09-21_GenBank_Environmental_Uncultured_to_Exclude.txt -query query_seqs.fasta
 ```
 
 14. Commit the script as you work on it, whenever you make a good chunk of progress. Make sure you write
