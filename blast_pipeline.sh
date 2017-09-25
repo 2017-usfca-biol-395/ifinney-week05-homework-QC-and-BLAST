@@ -9,7 +9,7 @@ do
 done
 
 # This runs QC reports
-#fastqc data/raw_data/*.fastq --outdir=output/fastqc
+fastqc data/raw_data/*.fastq --outdir=output/fastqc
 
 #for file in $@
 #do 
