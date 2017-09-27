@@ -12,4 +12,3 @@ do
 	cut -d "," -f1 ${run_id} | sort | uniq -c | sort -r > compiled_blast_summary_results/$(basename -s .csv ${run_id})_summary.csv
 done
 
-
