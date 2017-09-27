@@ -37,9 +37,9 @@ done
 
 # BUG IN SCRIPT: Caused issues with BLASTing all my files
 # To fix this error, the following for loop was ran to identity and run each file to its correct identifier file
-#New files are under 
+#New files are under $file_blast_results.csv 
 # for run_id in $(cut -f 6 data/metadata/fierer_forensic_hand_mouse_SraRunTable.txt | tail -n +2)
 #do
 #grep $run_id BLAST_all.csv > ${run_id}_blast_results.csv
 #done
- 
+
