@@ -1,5 +1,5 @@
 # Sequence QC and BLAST homework assignment for BIOL395
-## Due as a pull request on September 27, 2017 before 11:30 am
+## Due as a pull request on Friday, September 29, 2017 before 11:30 am
 
 The **goal of this assignment** is to work through the first stages of a realistic analysis workflow, starting with downloading of fastq files, through QC checks, trimming, and finally BLASTing them against a local copy of GenBank (on the server). The data we will be using is from the NCBI Sequence Read Archive study number ERP022657. A summary of the information is available [here](https://www.ncbi.nlm.nih.gov/Traces/study/?WebEnv=NCID_1_128047291_130.14.22.33_5555_1505945515_1626731749_0MetA0_S_HStore&query_key=5). The metadata from this study is included in the git repository for this assignment in a `data/metadata` directory.
 
@@ -21,7 +21,7 @@ This second assignment will be worth 20 points. The grading breakdown will be as
 * 4 points - Scripts are appropriately commented and well organized
 * 4 points - Appropriate use of git to version control the steps, including adding and committing the appropriate files at the specific steps below, and writing informative and appropriately formatted commit messages
 
-You must submit your work as a Pull Request to the class organization ('2017-usfca-biol-395') on GitHub by 11:30 am on Wednesday, September 27 for full credit. Late assignments will not be accepted, since we will be peer reviewing the code after it is submitted.
+You must submit your work as a Pull Request to the class organization ('2017-usfca-biol-395') on GitHub by 11:30 am on Friday, September 29 for full credit. Late assignments will not be accepted, since we will be peer reviewing the code after it is submitted.
 
 Steps:
 
